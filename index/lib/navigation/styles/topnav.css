@@ -1,0 +1,75 @@
+/* Topnav Styles */
+:root {
+  --header-height: 4rem;
+}
+
+/* Header Container */
+.tp-header {
+  height: var(--header-height);
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* Navigation Items */
+.tp-nav-item {
+  position: relative;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Mega Menu */
+.tp-mega-menu {
+  box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mobile Menu */
+.tp-mobile-menu {
+  width: 16rem;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Overlay */
+.tp-overlay {
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* User Menu */
+.tp-user-menu {
+  min-width: 12rem;
+  z-index: 50;
+}
+
+/* Content Wrapper */
+.tp-content-wrapper {
+  margin-top: var(--header-height);
+  min-height: calc(100vh - var(--header-height));
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .tp-header {
+    position: sticky;
+    top: 0;
+  }
+
+  .tp-mobile-menu {
+    overflow-y: auto;
+  }
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tp-mega-menu {
+  animation: slideDown 0.2s ease-out;
+}
